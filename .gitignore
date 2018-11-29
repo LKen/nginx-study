@@ -1,0 +1,32 @@
+.DS_Store
+
+node_modules/
+dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+**/*.log
+test/unit/coverage
+test/e2e/reports
+selenium-debug.log
+
+# Business data API, non-upload
+src/api
+
+# Editor directories and files
+.idea
+# .vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# SVN
+.svn
+target/
+
+
+#nginx
+html/
+
+package-lock.json
