@@ -28,5 +28,6 @@ target/
 
 #nginx
 html/
+logs/
 
 package-lock.json
