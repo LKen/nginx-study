@@ -29,5 +29,6 @@ target/
 #nginx
 html/
 logs/
+logs/*.pid
 
 package-lock.json
