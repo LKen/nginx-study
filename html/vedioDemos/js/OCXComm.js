@@ -75,33 +75,33 @@ define(function () {
   };
   OCXComm.prototype.isIE8 = function () {
     return this.ieLessThan(9);
-  },
-    OCXComm.prototype.ieLessThan = function (ver) {
-      var ua = navigator.userAgent,
-        isIE = ua.indexOf('MSIE') > -1,
-        v = isIE ? /\d+/.exec(ua.split(';')[1]) : 0;
-      return !isIE ? false : parseInt(v) < ver;
-    },
-    /**
-     * @description 生成OCX参数
-     * @param {String} action     操作行为
-     * @param {Object} [params]   参数
-     * @returns {Object}          JSON数据
-     */
-    OCXComm.prototype.generateOcxParamJson = function (action, params) {
-      var data = {}, paramJson;
-      if (!action) {
-        throw new Error("参数错误，请确认参数传递正确！");
-      }
-      data.action = action;
-      data.arguments = params || {};
+  };
+  OCXComm.prototype.ieLessThan = function (ver) {
+    var ua = navigator.userAgent,
+      isIE = ua.indexOf('MSIE') > -1,
+      v = isIE ? /\d+/.exec(ua.split(';')[1]) : 0;
+    return !isIE ? false : parseInt(v) < ver;
+  };
+  /**
+   * @description 生成OCX参数
+   * @param {String} action     操作行为
+   * @param {Object} [params]   参数
+   * @returns {Object}          JSON数据
+   */
+  OCXComm.prototype.generateOcxParamJson = function (action, params) {
+    var data = {}, paramJson;
+    if (!action) {
+      throw new Error("参数错误，请确认参数传递正确！");
+    }
+    data.action = action;
+    data.arguments = params || {};
 
-      var paramJson = JSON.stringify(data);
-      if (this.isIE8()) {
-        eval("paramJson = '" + JSON.stringify(data) + "';");
-      }
-      return paramJson;
-    };
+    var paramJson = JSON.stringify(data);
+    if (this.isIE8()) {
+      eval("paramJson = '" + JSON.stringify(data) + "';");
+    }
+    return paramJson;
+  };
   /**
    * @description 注册控件消息回调函数，用于控件消息回调给web
    * @type inte
