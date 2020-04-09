@@ -1,0 +1,11 @@
+{
+  "name": "robot-mobile",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "nginx.exe",
+    "reload": "nginx -s reload",
+    "stop": "nginx -s stop",
+    "kill": "taskkill /fi \"imagename eq nginx.EXE\" /f"
+  }
+}
